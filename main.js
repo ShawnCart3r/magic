@@ -1,16 +1,16 @@
 $(document).ready(() => {
   $('#searchForm').on('submit', (e) => {
     let searchText = $('#searchTitle').val();
-    getMovies(searchTitle);
+    getMagic(searchTitle);
     e.preventDefault();
   });
 });
 
-function getMovies(searchText){
+function getMagic(searchText){
   axios.get('https://api.scryfall.com/cards/named?fuzzy=sol+ring'+searchTitle)
     .then((response) => {
       console.log(response);
-      let movies = response.data.Search;
+      let magic = response.data.Search;
       let output = '';
       $.each(magic, (index, magic) => {
         output += `
